@@ -1,7 +1,15 @@
-#spring:
-#  flyway:
-#    user: testUser
-#    password: abc123
-#    schemas: schemaName
-#    url: jdbc:h2:mem:DATABASE
-#    locations: filesystem:db/migration
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;
+#    url: jdbc:h2:file:/home/aaron/h2db # File-base storage
+    driver-class-name: org.h2.Driver
+    username: sa
+    platform: org.hibernate.dialect.H2Dialect
+  flyway:
+    user: sa
+    password:
+    url: jdbc:h2:mem:testdb
+    locations: filesystem:src/main/resources/db/migration/

@@ -27,6 +27,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+
         <!-- Database Dependencies -->
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -79,14 +84,7 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>6.0.8</version>
-                <configuration>
-                    <user>testUser</user>
-                    <password>admin123</password>
-                    <schemas>
-                        <schema>schemaName</schema>
-                    </schemas>
-                </configuration>
+                <version>6.1.0</version>
             </plugin>
         </plugins>
     </build>
