@@ -10,7 +10,7 @@ import java.time.Instant;
 public class ExerciseRecord {
 
     @Id public Long exRecId;
-    @Column("exercise_nam") public String exerciseName;
+    @Column("exercise_name") public String exerciseName;
     @Column("created_date") public Instant createdDate;
     @Column("completed_date") public Instant completedDate;
 
