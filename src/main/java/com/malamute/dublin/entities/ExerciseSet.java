@@ -1,11 +1,14 @@
 package com.malamute.dublin.entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("exercise_set")
 public class ExerciseSet {
 
-    public Long id;
-    public Integer weight;
-    public Integer reps;
+    @Id public Long id;
+    @Column("weight") public Integer weight;
+    @Column("reps") public Integer reps;
 
 }

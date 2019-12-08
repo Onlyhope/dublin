@@ -13,3 +13,4 @@ spring:
     password:
     url: jdbc:h2:mem:testdb
     locations: filesystem:src/main/resources/db/migration/
+    enabled: true
