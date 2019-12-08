@@ -14,4 +14,36 @@ public class ExerciseRecord {
     @Column("created_date") public Instant createdDate;
     @Column("completed_date") public Instant completedDate;
 
+    public Long getExRecId() {
+        return exRecId;
+    }
+
+    public void setExRecId(Long exRecId) {
+        this.exRecId = exRecId;
+    }
+
+    public String getExerciseName() {
+        return exerciseName;
+    }
+
+    public void setExerciseName(String exerciseName) {
+        this.exerciseName = exerciseName;
+    }
+
+    public Instant getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Instant createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Instant getCompletedDate() {
+        return completedDate;
+    }
+
+    public void setCompletedDate(Instant completedDate) {
+        this.completedDate = completedDate;
+    }
+
 }
