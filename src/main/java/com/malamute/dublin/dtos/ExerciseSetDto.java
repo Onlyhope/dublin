@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ExerciseSetDto {
 
-    @JsonProperty("weight") public Integer weight;
-    @JsonProperty("reps") public Integer reps;
+    @JsonProperty("weight") private Integer weight;
+    @JsonProperty("reps") private Integer reps;
 
     public Integer getWeight() {
         return weight;

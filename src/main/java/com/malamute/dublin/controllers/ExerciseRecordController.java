@@ -1,8 +1,7 @@
 package com.malamute.dublin.controllers;
 
 import com.malamute.dublin.dtos.ExerciseRecordDto;
-import com.malamute.dublin.entities.ExerciseRecord;
-import com.malamute.dublin.repositories.ExerciseRecordRepository;
+import com.malamute.dublin.services.ExerciseRecordService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +12,10 @@ public class ExerciseRecordController {
 
     private final Logger log = LoggerFactory.getLogger(ExerciseRecordController.class);
 
-    private final ExerciseRecordRepository exerciseRecordRepo;
+    private final ExerciseRecordService service;
 
-    public ExerciseRecordController(ExerciseRecordRepository exerciseRecordRepo) {
-        this.exerciseRecordRepo = exerciseRecordRepo;
+    public ExerciseRecordController(ExerciseRecordService exerciseRecordService) {
+        this.service = exerciseRecordService;
     }
 
     @GetMapping
@@ -29,26 +28,10 @@ public class ExerciseRecordController {
             @PathVariable("user_id") String userId,
             @RequestBody ExerciseRecordDto exerciseRecordDto
     ) {
-        exerciseRecordRepo.save(dtoToEntity(exerciseRecordDto));
+        service.save(exerciseRecordDto);
         log.info("Creating an exercise record for {}", userId);
         log.info("Exercise Record: {}", exerciseRecordDto);
         return ResponseEntity.ok(exerciseRecordDto);
-    }
-
-    ExerciseRecord dtoToEntity(ExerciseRecordDto dto) {
-        ExerciseRecord entity = new ExerciseRecord();
-        entity.setExerciseName(dto.getExerciseName());
-        entity.setCreatedDate(dto.getCreatedDate());
-        entity.setCompletedDate(dto.getCompletedDate());
-        return entity;
-    }
-
-    ExerciseRecordDto entityToDto(ExerciseRecord entity) {
-        ExerciseRecordDto dto = new ExerciseRecordDto();
-        dto.setExerciseName(entity.getExerciseName());
-        dto.setCreatedDate(entity.getCreatedDate());
-        dto.setCompletedDate(entity.getCompletedDate());
-        return dto;
     }
 
 }

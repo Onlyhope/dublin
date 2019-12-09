@@ -8,7 +8,26 @@ import org.springframework.data.relational.core.mapping.Table;
 public class ExerciseSet {
 
     @Id public Long id;
-    @Column("weight") public Integer weight;
-    @Column("reps") public Integer reps;
+    @Column("weight") private Integer weight;
+    @Column("reps") private Integer reps;
 
+    public Long getId() {
+        return id;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Integer getReps() {
+        return reps;
+    }
+
+    public void setReps(Integer reps) {
+        this.reps = reps;
+    }
 }

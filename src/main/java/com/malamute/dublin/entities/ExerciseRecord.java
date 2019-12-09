@@ -18,10 +18,6 @@ public class ExerciseRecord {
         return exRecId;
     }
 
-    public void setExRecId(Long exRecId) {
-        this.exRecId = exRecId;
-    }
-
     public String getExerciseName() {
         return exerciseName;
     }
