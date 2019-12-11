@@ -8,10 +8,10 @@ Built with embedded H2 Database.
 
 http://localhost:8080/h2-console
 
-Driver Class: org.h2.Driver
-JDBC URL: jdbc:h2:mem:testdb
-User Name: sa
-Password: ""
+Driver Class: org.h2.Driver <br/>
+JDBC URL: jdbc:h2:mem:testdb <br/>
+User Name: sa <br/>
+Password: "" <br/>
 
 ## Endpoints
 
