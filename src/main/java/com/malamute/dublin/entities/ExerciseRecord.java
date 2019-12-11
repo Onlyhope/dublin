@@ -9,10 +9,14 @@ import java.sql.Timestamp;
 @Table("exercise_record")
 public class ExerciseRecord {
 
-    @Id public Long exRecId;
-    @Column("exercise_name") public String exerciseName;
-    @Column("created_date") public Timestamp createdDate;
-    @Column("completed_date") public Timestamp completedDate;
+    @Id
+    public Long exRecId;
+    @Column("exercise_name")
+    public String exerciseName;
+    @Column("created_date")
+    public Timestamp createdDate;
+    @Column("completed_date")
+    public Timestamp completedDate;
 
     public Long getExRecId() {
         return exRecId;

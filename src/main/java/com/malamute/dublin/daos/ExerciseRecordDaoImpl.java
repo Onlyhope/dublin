@@ -5,8 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -62,7 +60,9 @@ public class ExerciseRecordDaoImpl implements ExerciseRecordDao {
             ps.setTimestamp(3, exerciseRecord.getCompletedDate());
             int status = ps.executeUpdate();
 
-            if (status == 0) { throw new SQLException("Error saving exercise record"); }
+            if (status == 0) {
+                throw new SQLException("Error saving exercise record");
+            }
 
             try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
                 if (generatedKeys.next()) {

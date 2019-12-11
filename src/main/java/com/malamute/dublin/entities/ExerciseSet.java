@@ -7,9 +7,12 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("exercise_set")
 public class ExerciseSet {
 
-    @Id public Long id;
-    @Column("weight") private Integer weight;
-    @Column("reps") private Integer reps;
+    @Id
+    public Long id;
+    @Column("weight")
+    private Integer weight;
+    @Column("reps")
+    private Integer reps;
 
     public Long getId() {
         return id;

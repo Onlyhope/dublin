@@ -4,7 +4,7 @@ spring:
       enabled: true
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;
-#    url: jdbc:h2:file:/home/aaron/h2db # File-base storage
+    #    url: jdbc:h2:file:/home/aaron/h2db # File-base storage
     driver-class-name: org.h2.Driver
     username: sa
     platform: org.hibernate.dialect.H2Dialect

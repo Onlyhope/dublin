@@ -7,10 +7,14 @@ import java.util.List;
 
 public class ExerciseRecordDto {
 
-    @JsonProperty("exercise_name") private String exerciseName;
-    @JsonProperty("sets") private List<ExerciseSetDto> exerciseSets;
-    @JsonProperty("created_date") private Instant createdDate;
-    @JsonProperty("completed_date") private Instant completedDate;
+    @JsonProperty("exercise_name")
+    private String exerciseName;
+    @JsonProperty("sets")
+    private List<ExerciseSetDto> exerciseSets;
+    @JsonProperty("created_date")
+    private Instant createdDate;
+    @JsonProperty("completed_date")
+    private Instant completedDate;
 
     public String getExerciseName() {
         return exerciseName;

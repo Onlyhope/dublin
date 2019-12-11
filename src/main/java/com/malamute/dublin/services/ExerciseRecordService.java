@@ -4,6 +4,7 @@ import com.malamute.dublin.daos.ExerciseRecordDao;
 import com.malamute.dublin.dtos.ExerciseRecordDto;
 import com.malamute.dublin.entities.ExerciseRecord;
 import org.springframework.stereotype.Service;
+
 import java.sql.Timestamp;
 import java.time.Instant;
 
