@@ -4,18 +4,22 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.Instant;
+import java.sql.Timestamp;
 
 @Table("exercise_record")
 public class ExerciseRecord {
 
     @Id public Long exRecId;
     @Column("exercise_name") public String exerciseName;
-    @Column("created_date") public Instant createdDate;
-    @Column("completed_date") public Instant completedDate;
+    @Column("created_date") public Timestamp createdDate;
+    @Column("completed_date") public Timestamp completedDate;
 
     public Long getExRecId() {
         return exRecId;
+    }
+
+    public void setExRecId(Long exRecId) {
+        this.exRecId = exRecId;
     }
 
     public String getExerciseName() {
@@ -26,20 +30,21 @@ public class ExerciseRecord {
         this.exerciseName = exerciseName;
     }
 
-    public Instant getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getCompletedDate() {
+    public Timestamp getCompletedDate() {
         return completedDate;
     }
 
-    public void setCompletedDate(Instant completedDate) {
+    public void setCompletedDate(Timestamp completedDate) {
         this.completedDate = completedDate;
     }
+
 
 }

@@ -2,6 +2,7 @@ package com.malamute.dublin.daos;
 
 import com.malamute.dublin.entities.ExerciseRecord;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ExerciseRecordDao {
