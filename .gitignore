@@ -29,3 +29,12 @@ hs_err_pid*
 
 .idea
 *.iml
+
+# Development Artifacts
+
+.classpath
+.factorypath
+.project
+.settings/
+.vscode/
+
