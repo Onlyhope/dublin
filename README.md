@@ -15,6 +15,16 @@ Password: "" <br/>
 
 ## Endpoints
 
+**GET - /users/{user_id}/workouts/{workout_id}**
+
+Fetch a list of exercise records for the given workout
+
+**GET - /users/{user_id}/workouts**
+
+Params:
+  - fromCreated
+  - toCreated
+
 **GET - /users/{user_id}/exercise-records/**
 
 Fetch a list of exercise records for the given user
