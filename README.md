@@ -25,20 +25,25 @@ Params:
   - fromCompleted
   - toCompleted
 
+**GET - /users/{user_id}/exercise-records/{ex_rec_id}**
+
+Fetch exercise records by user and exercise record Id.
+
 **POST - /users/{user_id}/exercise-records/**
 
 Creates an exercise record for the given user
 
 ```json
 {
-  "exerciseName": "Squat",
+  "workout_id": "361a2ad1-25ce-4448-ab48-28a034c1ad09",
+  "exercise_name": "Squat",
   "sets": [
     {"weight": 95, "reps": 5},
     {"weight": 115, "reps": 5},
     {"weight": 135, "reps": 10}
   ],
-  "createdDate": "2019-11-02T15:16:18.382Z",
-  "completedDate": "2019-11-02T15:16:18.382Z"
+  "created_date": "2019-11-02T15:16:18.382Z",
+  "completed_date": "2019-11-02T15:16:18.382Z"
 }
 ```
 
@@ -46,7 +51,8 @@ Creates an exercise record for the given user
 
 ```json
 {
-  "exerciseName": "Front Squat",
+  "workout_id": "361a2ad1-25ce-4448-ab48-28a034c1ad09",
+  "exercise_name": "Bench",
   "sets": [
     {"weight": 95, "reps": 5},
     {"weight": 115, "reps": 5},
@@ -54,8 +60,8 @@ Creates an exercise record for the given user
     {"weight": 155, "reps": 8},
     {"weight": 175, "reps": 6}
   ],
-  "createdDate": "2019-11-02T15:16:18.382Z",
-  "completedDate": "2019-11-02T15:18:26.079Z"
+  "created_date": "2019-11-02T15:16:18.382Z",
+  "completed_date": "2019-11-02T15:18:26.079Z"
 }
 ```
 
