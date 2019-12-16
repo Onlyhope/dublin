@@ -1,48 +1,41 @@
 package com.malamute.dublin.daos;
 
 import com.malamute.dublin.entities.ExerciseRecord;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.List;
 
-/**
- * Resource: https://www.journaldev.com/2593/spring-jdbc-example#spring-jdbc-dependencies
- */
+@Primary // Tells Spring this is the Primary dependency to inject. Otherwise it won't know between the two.
 @Repository
 public class ExerciseRecordDaoImpl implements ExerciseRecordDao {
 
     private final Logger log = LoggerFactory.getLogger(ExerciseRecordDaoImpl.class);
+    private final DataSource dataSource;
 
     @Autowired
-    private DataSource dataSource; // TODO - Delete later
-    private final JdbcTemplate jdbcTemplate;
+    public ExerciseRecordDaoImpl(DataSource dataSource) {
+        log.info("Injecting {} implementation", this.getClass().getSimpleName());
+        // Constructor injected Data Source
+        // Configuration is located in the application.yml
+//        this.dataSource = dataSource;
 
-    @Autowired
-    ExerciseRecordDaoImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+        // Manual Configuration
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1");
+        config.setDriverClassName("org.h2.Driver");
+        config.setUsername("sa");
+        config.setPassword("");
+        // Hardcoded dependency to the following Data Source
+        this.dataSource = new HikariDataSource(config);
     }
-
-//    @Override
-//    public ExerciseRecord save(ExerciseRecord exerciseRecord)  {
-//
-//        String query = "insert into exercise_record (exercise_name, created_date, completed_date) values (?, ?, ?)";
-//        Object[] args = new Object[]{
-//                exerciseRecord.getExerciseName(),
-//                exerciseRecord.getCreatedDate(),
-//                exerciseRecord.getCompletedDate()
-//        };
-//        int status = jdbcTemplate.update(query, args);
-//
-//        if (status == 0) return null;
-//
-//        return exerciseRecord;
-//    }
 
     @Override
     public ExerciseRecord save(ExerciseRecord exerciseRecord) {
@@ -88,12 +81,12 @@ public class ExerciseRecordDaoImpl implements ExerciseRecordDao {
     }
 
     @Override
-    public ExerciseRecord getById(Long id) {
+    public ExerciseRecord update(ExerciseRecord exerciseRecord) {
         return null;
     }
 
     @Override
-    public ExerciseRecord update(ExerciseRecord exerciseRecord) {
+    public ExerciseRecord getById(Long id) {
         return null;
     }
 
